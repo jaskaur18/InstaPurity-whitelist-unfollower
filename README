@@ -17,10 +17,13 @@ InstaPurity is a robust command-line interface (CLI) tool, developed using GoLan
 Before you start, make sure you have [Go](https://golang.org/dl/) installed on your system.
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/yourusername/InstaPurity-whitelist-unfollower.git
 ```
+
 2. Navigate into the project directory:
+
 ```bash
 cd InstaPurity-whitelist-unfollower
 ```
@@ -34,6 +37,7 @@ You can build the application for different platforms using the provided Makefil
 ```bash
 make build-linux
 ```
+
 This command will create a binary for Linux systems named `InstaPurity.linux` in the `./bin` directory.
 
 ### For Windows:
@@ -41,6 +45,7 @@ This command will create a binary for Linux systems named `InstaPurity.linux` in
 ```bash
 make build-win
 ```
+
 This command will create an executable for Windows named `InstaPurity.exe` in the `./bin` directory.
 
 ## Running the Application
@@ -78,3 +83,6 @@ InstaPurity was developed by Honey Singh.
 ---
 
 Made with :heart: & Golang. Enjoy InstaPurity and happy coding!
+```
+
+Make sure to save the updated README file and commit the changes to your repository. The Markdown should now render correctly with the appropriate headings, code blocks, and links.
