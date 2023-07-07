@@ -15,11 +15,11 @@ var vp *viper.Viper
 func CreateConfigFile(path string) error {
 	// Create test double data
 	dummyData := types.Config{
-		Username:     "username",
-		Password:     "***",
-		Interval:     20,
-		Limit:        500,
-		WhiteListTXT: "~/whitelist.txt",
+		Username:  "username",
+		Password:  "***",
+		Interval:  20,
+		Limit:     500,
+		WhiteList: "whitelist.txt",
 	}
 
 	// Marshal test double data to YAML format
@@ -48,6 +48,7 @@ func LoadConfig() (*types.Config, error) {
 			log.Printf("Error creating config file: %v", err)
 			return nil, err
 		}
+		return nil, errors.New("config file does not exist")
 	}
 
 	vp = viper.New()

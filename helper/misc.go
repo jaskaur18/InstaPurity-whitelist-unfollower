@@ -8,7 +8,8 @@ import (
 )
 
 func GetWhiteListUsernames() map[string]bool {
-	whiteListFilePath := path.Join(HomePath, CONFIG.WhiteListTXT)
+	whiteListFilePath := path.Join(HomePath, CONFIG.WhiteList)
+
 	file, err := os.ReadFile(whiteListFilePath)
 	if err != nil {
 		log.Fatalf("Error reading whitelist file from config: %s", err.Error())

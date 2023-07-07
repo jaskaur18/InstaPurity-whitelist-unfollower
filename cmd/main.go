@@ -8,7 +8,10 @@ import (
 )
 
 func StartUnfollowing() {
+	whiteListUsernames := helper.GetWhiteListUsernames()
+
 	log.Printf("Starting Unfollowing...")
+
 	p := &types.LoginParams{
 		Username: helper.CONFIG.Username,
 		Password: helper.CONFIG.Password,
@@ -19,8 +22,6 @@ func StartUnfollowing() {
 	}
 
 	log.Printf("Logged in as %s", g.Account.Username)
-
-	whiteListUsernames := helper.GetWhiteListUsernames()
 
 	removeFollowerParams := &types.RemoveFollowerParams{
 		Instagram:          g,
