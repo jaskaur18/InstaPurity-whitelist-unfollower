@@ -48,7 +48,7 @@ func LoginInsta(params *types.LoginParams) (insta *goinsta.Instagram, err error)
 		insta = goinsta.New(params.Username, params.Password)
 	}
 
-	if insta == nil {
+	if insta != nil {
 		log.Printf("Logging though password for %s", params.Username)
 
 		if err := insta.Login(); err != nil {
@@ -63,6 +63,10 @@ func LoginInsta(params *types.LoginParams) (insta *goinsta.Instagram, err error)
 	}
 
 	defer func(insta *goinsta.Instagram, path string) {
+		if insta == nil {
+			log.Printf("Insta is nil for %s", params.Username)
+			return
+		}
 		err := insta.Export(path)
 		if err != nil {
 			log.Printf("Error exporting session for %s: %s :%s", params.Username, path, err.Error())
