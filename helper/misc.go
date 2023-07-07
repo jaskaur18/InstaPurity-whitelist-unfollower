@@ -3,11 +3,13 @@ package helper
 import (
 	"log"
 	"os"
+	"path"
 	"strings"
 )
 
 func GetWhiteListUsernames() map[string]bool {
-	file, err := os.ReadFile(CONFIG.WhiteListTXT)
+	whiteListFilePath := path.Join(HomePath, CONFIG.WhiteListTXT)
+	file, err := os.ReadFile(whiteListFilePath)
 	if err != nil {
 		log.Fatalf("Error reading whitelist file from config: %s", err.Error())
 	}
