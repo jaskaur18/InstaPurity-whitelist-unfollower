@@ -52,7 +52,7 @@ func RemoveFollowers(p *types.RemoveFollowerParams) {
 						log.Printf("Successfully unfollowed %s", follower.Username) // Logging for successful unfollowing
 					}
 					rFollowers++
-					sTime := rand.Intn(10)
+					sTime := rand.Intn(5) + 5
 					log.Printf("Sleeping for %d seconds before unfollowing next user", sTime)
 					time.Sleep(time.Duration(sTime) * time.Second)
 				}
