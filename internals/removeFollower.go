@@ -56,7 +56,7 @@ func RemoveFollowers(p *types.RemoveFollowerParams) {
 						log.Printf("Successfully unfollowed %s", follower.Username) // Logging for successful unfollowing
 					}
 					rFollowers++
-					sTime := rand.Intn(10) + 5
+					sTime := rand.Intn(15) + 5
 					log.Printf("Sleeping for %d seconds before unfollowing next user", sTime)
 					time.Sleep(time.Duration(sTime) * time.Second)
 				}
@@ -69,7 +69,7 @@ func RemoveFollowers(p *types.RemoveFollowerParams) {
 		}
 
 		//SleepTime is the time between each unfollowing
-		randSTime := time.Duration(rand.Intn(30)+helper.CONFIG.Interval) * time.Second
+		randSTime := time.Duration(rand.Intn(50)+helper.CONFIG.Interval) * time.Second
 		log.Printf("Sleeping for %s before starting next batch of unfollowing", randSTime)
 		time.Sleep(randSTime)
 	}
