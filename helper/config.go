@@ -15,11 +15,12 @@ var vp *viper.Viper
 func CreateConfigFile(path string) error {
 	// Create test double data
 	dummyData := types.Config{
-		Username:  "username",
-		Password:  "***",
-		Interval:  20,
-		Limit:     500,
-		WhiteList: "whitelist.txt",
+		Username:         "username",
+		Password:         "***",
+		Interval:         20,
+		Limit:            500,
+		ExcludeFollowing: true,
+		WhiteList:        "whitelist.txt",
 	}
 
 	// Marshal test double data to YAML format

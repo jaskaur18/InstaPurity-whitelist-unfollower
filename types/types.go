@@ -5,11 +5,12 @@ import (
 )
 
 type Config struct {
-	Username  string `yaml:"username"`
-	Password  string `yaml:"password"`
-	Interval  int    `yaml:"interval"`
-	Limit     int    `yaml:"limit"`
-	WhiteList string `yaml:"whitelist"`
+	Username         string `yaml:"username"`
+	Password         string `yaml:"password"`
+	Interval         int    `yaml:"interval"`
+	Limit            int    `yaml:"limit"`
+	ExcludeFollowing bool   `yaml:"exclude_following"`
+	WhiteList        string `yaml:"whitelist"`
 }
 
 type LoginParams struct {

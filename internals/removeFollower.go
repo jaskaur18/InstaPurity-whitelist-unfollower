@@ -17,6 +17,10 @@ type AccountNotWhiteListParams struct {
 func GetNonWhiteListedAccount(p *AccountNotWhiteListParams) []*goinsta.User {
 	var FollowerTORemove []*goinsta.User
 	for _, f := range p.Followers {
+		if helper.CONFIG.ExcludeFollowing && f.Friendship.Following {
+			continue
+		}
+
 		if p.WhiteListUsernames[f.Username] != true {
 			FollowerTORemove = append(FollowerTORemove, f)
 		}
@@ -52,7 +56,7 @@ func RemoveFollowers(p *types.RemoveFollowerParams) {
 						log.Printf("Successfully unfollowed %s", follower.Username) // Logging for successful unfollowing
 					}
 					rFollowers++
-					sTime := rand.Intn(5) + 5
+					sTime := rand.Intn(10) + 5
 					log.Printf("Sleeping for %d seconds before unfollowing next user", sTime)
 					time.Sleep(time.Duration(sTime) * time.Second)
 				}

@@ -1,5 +1,6 @@
-username: username
-password: '***'
+username: xxx
+password: xxx
 interval: 20
 limit: 500
-whitelist: ~/whitelist.txt
+ExcludeFollowing: true
+whitelist: "whitelist.txt"
