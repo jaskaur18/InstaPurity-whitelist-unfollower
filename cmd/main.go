@@ -4,7 +4,6 @@ import (
 	"github.com/jaskaur18/InstaPurity-whitelist-unfollower/helper"
 	internal "github.com/jaskaur18/InstaPurity-whitelist-unfollower/internals"
 	"github.com/jaskaur18/InstaPurity-whitelist-unfollower/types"
-	"github.com/nexidian/gocliselect"
 	"log"
 )
 
@@ -40,18 +39,18 @@ func init() {
 }
 
 func main() {
-	menu := gocliselect.NewMenu("What You Want To Do?")
-
-	menu.AddItem("Start Unfollowing", "unfollow")
-	menu.AddItem("exit", "exit")
-
-	choice := menu.Display()
-
-	switch choice {
-	case "unfollow":
-		StartUnfollowing()
-	case "exit":
-		log.Printf("Exiting...")
-		return
-	}
+	//menu := gocliselect.NewMenu("What You Want To Do?")
+	//
+	//menu.AddItem("Start Unfollowing", "unfollow")
+	//menu.AddItem("exit", "exit")
+	//
+	//choice := menu.Display()
+	//
+	//switch choice {
+	//case "unfollow":
+	StartUnfollowing()
+	//case "exit":
+	//	log.Printf("Exiting...")
+	//	return
+	//}
 }
