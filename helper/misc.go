@@ -18,6 +18,9 @@ func GetWhiteListUsernames() map[string]bool {
 	whiteListUsernames := make(map[string]bool)
 
 	for _, username := range strings.Split(string(file), "\n") {
+		username = strings.TrimSpace(username)
+		username = strings.ReplaceAll(username, "@", "")
+
 		whiteListUsernames[username] = true
 	}
 

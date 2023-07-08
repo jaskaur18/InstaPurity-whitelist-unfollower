@@ -10,6 +10,8 @@ import (
 func StartUnfollowing() {
 	whiteListUsernames := helper.GetWhiteListUsernames()
 
+	log.Printf("WhiteListed Usernames: %v", whiteListUsernames)
+
 	log.Printf("Starting Unfollowing...")
 
 	p := &types.LoginParams{
